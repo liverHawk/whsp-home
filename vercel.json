@@ -5,10 +5,8 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/iwsp", "destination": "https://iwsp.vercel.app/iwsp" },
-    { "source": "/iwsp/:path*", "destination": "https://iwsp.vercel.app/iwsp/:path*" },
-    { "source": "/sh/202609", "destination": "https://whsp-202609-showroom.vercel.app/sh/202609" },
-    { "source": "/sh/202609/:path*", "destination": "https://whsp-202609-showroom.vercel.app/sh/202609/:path*" }
+    { "source": "/iwsp/:match*", "destination": "https://iwsp.vercel.app/:match*" },
+    { "source": "/sh/202609/:match*", "destination": "https://whsp-202609-showroom.vercel.app/:match*" }
   ],
   "headers": [
     {
