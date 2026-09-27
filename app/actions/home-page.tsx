@@ -94,6 +94,7 @@ export function HomePage() {
 function HomeHead() {
   return () => (
     <>
+      <link rel="canonical" href="https://whsp-home.vercel.app/" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link
