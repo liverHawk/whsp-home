@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/iwsp", "destination": "https://iwsp.vercel.app/iwsp" },
+    { "source": "/iwsp/:path*", "destination": "https://iwsp.vercel.app/iwsp/:path*" },
+    { "source": "/sh/202609", "destination": "https://whsp-202609-showroom.vercel.app/sh/202609" },
+    { "source": "/sh/202609/:path*", "destination": "https://whsp-202609-showroom.vercel.app/sh/202609/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Content-Type", "value": "text/javascript; charset=utf-8" }]
+    }
+  ]
+}

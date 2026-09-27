@@ -29,3 +29,17 @@ npm run start
 npm test
 npm run typecheck
 ```
+
+## Deploy (Vercel)
+
+`npm run build` renders the router output to static files in `dist/`, which Vercel serves as-is.
+`vercel.json` rewrites sub-paths to the other Vercel projects (multi-zone):
+
+| Path | Project |
+| --- | --- |
+| `/` | this repo (whsp-home) |
+| `/iwsp/*` | [iwsp](https://github.com/liverHawk/iwsp) → `https://iwsp.vercel.app` |
+| `/sh/202609/*` | [whsp_202609_showroom](https://github.com/liverHawk/whsp_202609_showroom) → `https://whsp-202609-showroom.vercel.app` |
+
+Each sub-project builds with a matching Vite `base`, so update both sides together when a path changes.
+To add a new page to the static build, append it to `pages` in `scripts/build.ts`.
